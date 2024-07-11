@@ -20,7 +20,7 @@ const SignIn = () => {
     console.log('SignIn Data:', data);
     // Implement your sign-in logic here without Firebase
     // Example: Navigate to another screen or perform other actions
-    router.replace("Home");
+    router.replace("(tabs)/Discover");
   };
 
   return (
@@ -62,6 +62,12 @@ const SignIn = () => {
         
         <TouchableOpacity style={styles.button} onPress={handleSubmit(handleSignIn)}>
           <Text style={styles.buttonText}>Sign In</Text>
+        </TouchableOpacity>
+        
+        <TouchableOpacity style={styles.button} onPress={() => router.push({
+          pathname: '(tabs)/MyTrip'
+        })}>
+          <Text style={styles.buttonText}>Dummy Home Redirect</Text>
         </TouchableOpacity>
         <Text style={styles.footerText}>
           Don't have an account?{' '}
